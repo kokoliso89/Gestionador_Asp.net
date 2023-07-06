@@ -1,0 +1,106 @@
+﻿@model IEnumerable<Gestionador.Models.Estadisticas>
+
+@{
+    ViewData["Title"] = "Estadisticas";
+}
+<div class="container">
+    <div class="table-container">
+
+        <p>
+            <a asp-action="Create" class="btn btn-primary">Create New</a>
+        </p>
+
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.JugadorID)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.EquipoID)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.PartidosJugados)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Canastas1Punto)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Canastas2Puntos)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Canastas3Puntos)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.PuntosTotales)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.RebotesTotales)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.AsistenciasTotales)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.JugadorID)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.EquipoID)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PartidosJugados)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Canastas1Punto)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Canastas2Puntos)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Canastas3Puntos)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PuntosTotales)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.RebotesTotales)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.AsistenciasTotales)
+                            </td>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.ID" class="btn btn-primary">Edit</a> |
+                                <a asp-action="Details" asp-route-id="@item.ID" class="btn btn-warning">Details</a> |
+                                <a asp-action="Delete" asp-route-id="@item.ID" class="btn btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<style>
+    .btn {
+        border-radius: 20px;
+        padding: 8px 16px;
+    }
+
+    .table-container {
+        border: 1px solid #ccc;
+        padding: 16px;
+        margin-bottom: 20px;
+    }
+
+    .table-responsive {
+        overflow-x: auto;
+    }
+</style>

@@ -1,0 +1,73 @@
+﻿@model Gestionador.Models.Estadisticas
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Estadisticas</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="JugadorID" class="control-label"></label>
+                <input asp-for="JugadorID" class="form-control" />
+                <span asp-validation-for="JugadorID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EquipoID" class="control-label"></label>
+                <input asp-for="EquipoID" class="form-control" />
+                <span asp-validation-for="EquipoID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PartidosJugados" class="control-label"></label>
+                <input asp-for="PartidosJugados" class="form-control" />
+                <span asp-validation-for="PartidosJugados" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Canastas1Punto" class="control-label"></label>
+                <input asp-for="Canastas1Punto" class="form-control" />
+                <span asp-validation-for="Canastas1Punto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Canastas2Puntos" class="control-label"></label>
+                <input asp-for="Canastas2Puntos" class="form-control" />
+                <span asp-validation-for="Canastas2Puntos" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Canastas3Puntos" class="control-label"></label>
+                <input asp-for="Canastas3Puntos" class="form-control" />
+                <span asp-validation-for="Canastas3Puntos" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PuntosTotales" class="control-label"></label>
+                <input asp-for="PuntosTotales" class="form-control" />
+                <span asp-validation-for="PuntosTotales" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RebotesTotales" class="control-label"></label>
+                <input asp-for="RebotesTotales" class="form-control" />
+                <span asp-validation-for="RebotesTotales" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AsistenciasTotales" class="control-label"></label>
+                <input asp-for="AsistenciasTotales" class="form-control" />
+                <span asp-validation-for="AsistenciasTotales" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

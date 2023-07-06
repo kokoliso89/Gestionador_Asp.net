@@ -1,0 +1,57 @@
+﻿
+@model List<Equipos>
+
+<!-- Resto del código de la vista -->
+
+<div class="container">
+    <div class="table-container">
+        <div class="text-right mb-3">
+            <a class="btn btn-primary" href="@Url.Action("Create")">Create New</a>
+        </div>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Ciudad</th>
+                        <th>Entrenador</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var equipo in Model)
+                    {
+                        <tr>
+                            <td>@equipo.Nombre</td>
+                            <td>@equipo.Ciudad</td>
+                            <td>@equipo.Entrenador</td>
+                            <td>
+                                <a class="btn btn-primary" href="@Url.Action("Details", new { id = equipo.ID })">Detalles</a>
+                                <a class="btn btn-warning" href="@Url.Action("Edit", new { id = equipo.ID })">Editar</a>
+                                <a class="btn btn-danger" href="@Url.Action("Delete", new { id = equipo.ID })">Eliminar</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<style>
+    .btn {
+        border-radius: 20px; /* Forma redondeada */
+        padding: 8px 16px; /* Espacio interno del botón */
+    }
+
+    .table-container {
+        border: 1px solid #ccc; /* Borde del contenedor de la tabla */
+        padding: 16px; /* Espacio interno del contenedor */
+        margin-bottom: 20px; /* Espacio inferior entre el contenedor y otros elementos */
+    }
+  
+    .table-responsive {
+        overflow-x: auto; /* Hace que la tabla sea autosizable horizontalmente */
+    }
+</style>
+
